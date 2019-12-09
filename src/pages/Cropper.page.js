@@ -261,6 +261,13 @@ class CropperPage extends Component {
       paddingLeft: this.props.BORDER_WIDTH,
     };
   }
+  
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.initialRotation != this.state.rotation) {
+      this.setState({rotation: nextProps.initialRotation}, () => {
+      })
+    }
+  }
 
   getRectangleStyle = () => {
     return {
